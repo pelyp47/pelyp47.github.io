@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/virtual_reality_woman_player_gamer_game_icon_153140.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&family=Playfair+Display:wght@400;500;700;900&family=Roboto:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>Tajam</title>
+    <script src="script.js"></script>
+</head>
+<body>
+    <!--block1-->
+    <header>
+        <div class="head_contain">
+            <div class="head">
+                <div class="logo">
+                    <img src="images/logo_img.png" alt="">
+                    <h1>tajam</h1>
+                </div>
+                <ul class="navbar">
+                    <li><a href="">HOME</a></li>
+                    <li><a href="">ABOUT</a></li>
+                    <li><a href="">EXPERTISE</a></li>
+                    <li><a href="">TEAMS</a></li>
+                    <li><a href="">WORKS</a></li>
+                    <li><a href="">PEOPLE SAY</a></li>
+                    <li><a href="">CONTACT</a></li>
+                </ul>
+            </div>
+            <div class="main">
+                <div class="main_text">
+                    <h1>We Are Awesome Creative Agency</h1>
+                    <p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit.</p>
+                    <div class="wrapper_a"><a href="">LEARN MORE</a></div>
+                </div>
+                <div class="dotnav">
+                    <div class="dot" id="dotnav_butt1" onclick="dotnav_butt1_func()"></div>
+                    <div class="dot" id="dotnav_butt2" onclick="dotnav_butt2_func()"></div>
+                    <div class="dot" id="dotnav_butt3" onclick="dotnav_butt3_func()"></div>
+                    <div class="dot" id="dotnav_butt4" onclick="dotnav_butt4_func()"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--end of the block1-->
+
+    <!--block2-->
+    <div class="about">
+        <div class="about_contain">
+            <img src="images/about_logo_img.png" alt="" class="about_img">
+            <div class="about_text">
+                <h1>OUR STORY</h1>
+                <p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus</p>
+                <p>Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+                <div class="wrapper_a"><a href="">LEARN MORE</a></div>
+            </div>
+        </div>
+        <div class="video_about_wrapp">
+            <video
+                width="100%"
+                height="auto"
+                poster="images/video_poster.png"
+                loop
+                id="video_about"
+            >
+                <source 
+                preload="auto" 
+                src='images/videoplayback.mp4'>
+            </video>
+            <button onclick="playPause()">
+                <img src="images/video_icon.png" alt="" id='video_icon'>
+                <h2 id='video_h1'>WATCH OUR STORY</h2>
+            </button>
+        </div>
+    </div>
+    <!--end of the block2-->
+
+    <!--block3-->
+    <div class="expertise">
+        <div class="expertise_title">
+            <h1>EXPERTISE</h1>
+            <h6>Lorem ipsum dolor sit amet proin gravida nibh vel velit</h6>
+            <div></div>
+        </div>
+        <div class="expertise_items">
+            <div class="top">
+                <div class="expertise_item">
+                    <img src="images/expertise_icon1.png" alt="">
+                    <h1>WEB DESIGN & DEVELOPMENT</h1>
+                    <p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet Aenean.</p>
+                </div>
+                <div class="expertise_item">
+                    <img src="images/expertise_icon2.png" alt="">
+                    <h1>BRENDING IDENTITY</h1>
+                    <p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet Aenean.</p>
+                </div>
+                <div class="expertise_item">
+                    <img src="images/expertise_icon3.png" alt="">
+                    <h1>MOBILE APP</h1>
+                    <p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet Aenean.</p>
+                </div>
+            </div>
+            <div class="bottom">
+                <div class="expertise_item">
+                    <img src="images/expertise_icon4.png" alt="">
+                    <h1>SEARCH ENGINE OPTIMIZATION</h1>
+                    <p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet Aenean.</p>
+                </div>
+                <div class="expertise_item">
+                    <img src="images/expertise_icon5.png" alt="">
+                    <h1>GAME DEVELOPMENT</h1>
+                    <p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet Aenean.</p>
+                </div>
+                <div class="expertise_item">
+                    <img src="images/expertise_icon6.png" alt="">
+                    <h1>MADE WITH LOVE</h1>
+                    <p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet Aenean.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end of  the block3-->
+
+    <!--block4-->
+    <div class="team">
+        <div class="team_container">
+            <div class="team_title">
+                <h1>MEET OUR AMAZING TEAM</h1>
+                <p>Lorem ipsum dolor sit amet proin gravida nibh vel velit</p>
+                <div></div>
+            </div>
+            <div class="team_items">
+                <div class="team_item">
+                    <img src="images/team1.png" alt="">
+                    <h1>SEMF UCUK</h1>
+                    <h2>SEO & FOUNDER</h2>
+                </div>
+                <div class="team_item">
+                    <img src="images/team2.png" alt="">
+                    <h1>DIK ADALIN</h1>
+                    <h2>ENGINEERING</h2>
+                </div>
+                <div class="team_item">
+                    <img src="images/team1.png" alt="">
+                    <h1>JENG KOL</h1>
+                    <h2>DESIGNER</h2>
+                </div>
+                <div class="team_item">
+                    <img src="images/team2.png" alt="">
+                    <h1>PET ROMAK</h1>
+                    <h2>MARKETING</h2>
+                </div>
+            </div>
+            <div class="team_bottom">
+                <p>Become part of our dream team, let’s join us !</p>
+                <div class="wrapper_a">
+                    <a href="#">WE ARE HIRING</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end of the block4-->
+
+    <!--block5-->
+    <div class="works">
+        <div class="works_title">
+            <h1>OUR WORKS</h1>
+            <a href="#" onmouseover="move()" onmouseout="back()">See All Projects in dribble <img src="images/rigth_arrow.png" alt="" id='right_arrow_works'></a>
+        </div>
+        <div class="works_items">
+            <div class="works_item"></div>
+            <div class="works_item"></div>
+            <div class="works_item"></div>
+            <div class="works_item"></div>
+            <div class="works_item"></div>
+            <div class="works_item"></div>
+            <div class="works_item"></div>
+            <div class="works_item"></div>
+            <div class="works_item"></div>
+            <div class="works_item"></div>
+            <div class="works_item"></div>
+            <div class="works_item"></div>
+            <div class="works_item"></div>
+            <div class="works_item"></div>
+            <div class="works_item"></div>
+            <div class="works_item"></div>
+        </div>
+        <div class="works_link">
+            <div class="wrapper_a">
+                <a href="#">LOAD MORE</a>
+            </div>
+        </div>
+    </div>
+    <!--end of the block5-->
+    <!--block6-->
+    <div class="testimonials">
+        <div class="testimonials_text">
+            <h1>"</h1>
+            <p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit.</p>
+            <h3 id='testimonial_person'>PERSON_1_3</h3>
+            <h4 id='testimonial_person2'>PERSON_2_3</h4>
+        </div>
+        <div class="testimonials_pictures">
+            <button onclick="left_test();test_counter_change()" id='left_button_test'></button>
+            <div class="pictures_testimonials">
+                <div class="testimonial_picture testimonial_picture1" id="testimonial_picture_1"></div>
+                <div class="testimonial_picture testimonial_picture2" id="testimonial_picture_2"></div>
+                <div class="testimonial_picture testimonial_picture3" id="testimonial_picture_3"></div>
+                <div class="testimonial_picture testimonial_picture4" id="testimonial_picture_4"></div>
+                <div class="testimonial_picture testimonial_picture5" id="testimonial_picture_5"></div>
+            </div>
+            <button onclick="right_test();test_counter_change()" class="right_button_test"></button>
+        </div>     
+    </div>
+    <!--end of the block6-->
+    <!--block7-->
+    <div class="contact">
+        <div class="form">
+           <form action="" class="contact_form">
+                <h1>GIVE US A GOOD NEWS</h1>
+                <input type="text" placeholder="Name" name="Name">
+                <input type="email" placeholder="Email" name="Email">
+                <input type="text" placeholder="Subject" name="Subject">
+                <textarea name="Message" placeholder="Your Message" id="" cols="10" rows="12"></textarea> 
+            </form>
+            <div class="wrapper_a">
+               <a href="">SUBMIT</a>
+            </div>
+        </div>
+        <div class="clients">
+            <h1>OUR HAPPY CLIENT</h1>
+            <div class="clients_photos">
+                <div class="client_photo client_photo1"></div>
+                <div class="client_photo client_photo2"></div>
+                <div class="client_photo client_photo3"></div>
+                <div class="client_photo client_photo4"></div>
+                <div class="client_photo client_photo5"></div>
+                <div class="client_photo client_photo6"></div>
+                <div class="client_photo client_photo7"></div>
+                <div class="client_photo client_photo8"></div>
+                <div class="client_photo client_photo9"></div>
+                <div class="client_photo client_photo10"></div>
+            </div>
+        </div>
+    </div>
+    <!--end of the block7-->
+    <!--footer-->
+    <footer>
+        <div class="footer1">
+            <div class="logo">
+                <img src="images/logo_img.png" alt="">
+                <h1>tajam</h1>
+            </div>
+            <p>lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh elit. Duis sed odio sit amet auctror a ornare odio non mauris vitae erat in elit</p>
+        </div>
+        <div class="footer2">
+            <h1>OUR STUDIO</h1>
+            <p>Ruko cucruk, Jl. Radio luar dalem jos No.12 - 13, Kalideres - Jakarta Barat
+                11480 - Indonesia</p>
+            <p>(+62) 21-2224 3333</p>
+        </div>
+        <div class="footer3">
+            <h1>STAY IN TOUCH</h1>
+            <div class="subscribe_news">
+                <a href="#">Subscribe our newsletter</a>
+                <a href="#"><img src="images/paper_footer.png" alt=""></a>
+            </div>
+            <div class="social_networks">
+                <a href="#" class="social_network"><img src="images/facebook_icon.png" alt=""></a>
+                <a href="#" class="social_network"><img src="images/twitter_icon.png" alt=""></a>
+                <a href="#" class="social_network"><img src="images/dribble_icon.png" alt=""></a>
+                <a href="#" class="social_network"><img src="images/instagram_icon.png" alt=""></a>
+                <a href="#" class="social_network"><img src="images/google_plus_icon.png" alt=""></a>
+                <a href="#" class="social_network"><img src="images/youtube_icon.png" alt=""></a>
+            </div>
+        </div>
+        <div class="footer4">
+            <ul class="navbar">
+                <li><a href="#">HELP</a></li>
+                <li><a href="#">TERMS&CONDITION</a></li>
+                <li><a href="#">PRIVACY</a></li>
+            </ul>
+            <address>Copyright © 2015 - Tajem Creative</address>
+        </div>
+    </footer>
+</body>
+</html>
