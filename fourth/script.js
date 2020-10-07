@@ -1,3 +1,11 @@
+window.onload = function () {
+    document.body.classList.add('loaded_hiding');
+    window.setTimeout(function () {
+      document.body.classList.add('loaded');
+      document.body.classList.remove('loaded_hiding');
+    }, 500);
+}
+
 let dotnav_butt1_func = function () {
     document.getElementById("dotnav_butt1").style.backgroundColor='#00e0d0'
     document.getElementById("dotnav_butt2").style.backgroundColor=''
