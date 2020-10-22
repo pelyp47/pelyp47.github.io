@@ -173,14 +173,6 @@
     transition: transform .4s;
 }
 
-.nav__navitem:hover {
-    transform: scale(1.1);
-}
-
-.nav__navitem--social:hover {
-    transform: scale(1);
-}
-
 .nav__navitem--social .nav__navitem {
     display: inline-flex;
     justify-content: center;
