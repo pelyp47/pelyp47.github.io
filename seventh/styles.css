@@ -987,6 +987,7 @@ a.arrow-link_clicked.arrow-link_clicked__imp .arrow-link__border_left {
 }
 
 .footer__input {
+  caret-color: transparent;
   border: none;
   position: relative;
   min-width: 400px;
