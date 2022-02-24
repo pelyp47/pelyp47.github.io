@@ -1,0 +1,52 @@
+:root {
+    --neg-path-length: -946.434814453125;
+    --path-length: 946.434814453125;
+    --path-length-double: -1892.86962890625;
+}
+
+.transition-block {
+    top: 0;
+    right: 100%;
+    min-height: 100vh;
+    width: 100vw;
+    background-color: #fff;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 500;
+    transition: right .5s;
+}
+
+.transition__treble-clef {
+    stroke-width: 5px;
+    stroke-linecap: round;
+    overflow: visible;
+    stroke-dasharray: var(--path-length);
+    stroke-dashoffset: var(--path-length);
+    
+}
+
+.transition-block._active {
+    right: 0;
+    transition: right .5s;
+}
+
+.transition__treble-clef._active {
+    animation: trebleClefDrawing 3s .5s ease-in-out 1 forwards;
+}
+
+@keyframes trebleClefDrawing {
+    0% {
+        stroke-dashoffset: var(--path-length);
+    }
+
+    50% {
+        stroke-dashoffset: 0;
+    }
+
+    100% {
+        stroke-dashoffset: var(--neg-path-length);
+    }
+}

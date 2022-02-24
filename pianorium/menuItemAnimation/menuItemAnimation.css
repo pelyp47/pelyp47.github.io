@@ -1,0 +1,14 @@
+.menu__letter_odd,.menu__letter_even {
+    padding: 0 1px;
+    margin: 0;
+    display: inline-block;
+    transition: transform .3s ease-out;
+}
+
+.menu__link:hover .menu__letter_odd{
+    transform: translateY(-2px);
+}
+
+.menu__link:hover .menu__letter_even{
+    transform: translateY(2px);
+}

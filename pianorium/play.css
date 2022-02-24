@@ -1,0 +1,90 @@
+.play {
+    min-height: 100vh;
+    background-color: #000;
+    color: #fff;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.piano-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    position: relative;
+}
+
+.note-screen {
+    font-size: 1.75rem;
+    position: absolute;
+    top: -50px;
+    left: 20px;
+}
+
+.piano {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.play__piano {
+    position: relative;
+    background-color: rgb(27, 27, 27);
+    height: 225px;
+    border-radius: 25px;
+    width: 85%;
+}
+
+.piano_buttons {
+    margin-bottom: 10px;
+    height: 150px;
+    display: flex;
+    align-items: start;
+    z-index: 0;
+    justify-content: center;
+}
+
+.piano__button {
+    border-radius: 0px 0px 10px 10px;
+    border: none;
+    margin: 0 1px;
+    font-size: 1.2rem;
+    display: inline-block;
+    min-width: 30px;
+    min-height: 100%;
+    text-align: center;
+    cursor: pointer;
+    transition: transform .1s;
+    transform-origin: 50% 0;
+}
+
+.piano__button._pressed {
+    transform: scaleY(1.03);
+}
+
+.piano__button_black {
+    background-color: #000;
+    color: #fff;
+    position: relative;
+    z-index: 1;
+    margin: 0 -7.5px;
+    font-size: 1.1rem;
+    min-height: 70%;
+    min-width: 15px;
+}
+
+@media (max-width: 580px) {
+    .play {
+        transform: rotateZ(90deg) translateY(-100%);
+        transform-origin: 0% 0%;
+        min-height: 100vw;
+        min-width: 100vh;
+    }
+
+    .play._burgerMenuOpenned .burger-menu {
+        height: 100vw;
+        width: 100vh;
+        z-index: 100;
+    }
+}

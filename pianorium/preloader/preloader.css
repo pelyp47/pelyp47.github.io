@@ -1,0 +1,46 @@
+:root {
+    --neg-path-length: -946.434814453125;
+    --path-length: 946.434814453125;
+    --path-length-double: -1892.86962890625;
+}
+
+.preloader {
+    min-width: 100vw;
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    position: absolute;
+    z-index: 1000;
+    transition: opacity .1s;
+}
+
+.preloader__treble-clef {
+    stroke-width: 5px;
+    overflow: visible;
+    stroke-linecap: round;
+    stroke-dasharray: var(--path-length);
+    stroke-dashoffset: var(--path-length);
+    animation: trebleClefDrawing 3s ease-in-out infinite forwards;
+}
+
+@keyframes trebleClefDrawing {
+    0% {
+        stroke-dashoffset: var(--path-length);
+    }
+
+    50% {
+        stroke-dashoffset: 0;
+    }
+
+    100% {
+        stroke-dashoffset: var(--neg-path-length);
+    }
+}
+
+._pageLoaded .preloader__treble-clef {
+    animation-iteration-count: 1;
+
+}

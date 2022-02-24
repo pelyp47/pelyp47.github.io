@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Economica', sans-serif;
+}
+
+*::selection {
+    color: #000;
+    background-color: #fff;
+}
+
+a {
+    color: inherit;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+body {
+    overflow: hidden;
+}
+
+.main-header {
+    min-width: 100vw;
+    min-height: 100vh;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+header {
+    padding: 15px;
+    z-index: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: none;
+}
+
+.logo {
+    font-size: 2.5rem;
+    font-family: 'Megrim', cursive;
+}
+
+.menu {
+    list-style-type: none;
+    display: grid;
+    grid-template-rows: 1;
+    grid-auto-flow: column;
+}
+
+.menu__item {
+    margin: 0 10px;
+}
+
+.menu__link {
+    font-size: 1.6rem;
+}
+
+.main-header__content {
+    position: relative;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-header__background {
+    position: absolute;
+    z-index: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.main-header__blob {
+    position: absolute;
+    transform: translate(55%, 41%);
+    bottom: 50%;
+    right: 50%;
+}
+
+.main-header__blob_1 {
+    z-index: -1;
+    animation: slowRotation1 150s linear infinite;
+}
+
+.main-header__blob_2 {
+    z-index: -2;
+    animation: slowRotation2 190s linear infinite;
+}
+
+@keyframes slowRotation1 {
+    0% {
+        transform: translate(49%, 50%) rotateZ(0deg);
+    }
+    50% {
+        transform: translate(47%, 50%) rotateZ(-180deg);
+    }
+    100% {
+        transform: translate(49%, 50%) rotateZ(-360deg);
+    }
+}
+
+@keyframes slowRotation2 {
+    0% {
+        transform: translate(49%, 47%) rotateZ(0deg);
+    }
+    50% {
+        transform: translate(49%, 45%) rotateZ(180deg);
+    }
+    100% {
+        transform: translate(49%, 47%) rotateZ(360deg);
+    }
+}
+
+.main-header__text {
+    display: inline-block;
+    z-index: 6;
+    position: relative;
+    text-align: center;
+    font-weight: 400;
+    letter-spacing: 1px;
+    font-size: 4.8rem;
+    transform: translateY(-5px);
+    white-space: nowrap;
+}
+
+@media (max-width:550px) {
+    .main-header__content {
+        transform: scale(.6) !important;
+        overflow: visible;
+    }
+}
+
+@media (max-width:430px) {
+    .main-header__content {
+        transform: scale(.45) !important;
+        overflow: visible;
+    }
+}

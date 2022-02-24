@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pianorium</title>
+    <link rel="icon" href="images/pianoV1.ico" type="image/gif">
+
+    <!-- font-family: 'Economica', sans-serif; (400, 700)-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Economica:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- font-family: 'Megrim', cursive; (400) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Megrim&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="play.css">
+    <link rel="stylesheet" href="learn/learn.css">
+    <link rel="stylesheet" href="menuItemAnimation/menuItemAnimation.css">
+    <link rel="stylesheet" href="burgerMenu/burgerMenu.css">
+    <link rel="stylesheet" href="preloader/preloader.css">
+    <link rel="stylesheet" href="appearAnimationIndex/appearAnimationIndex.css">
+    <link rel="stylesheet" href="transitionBetweenPages/transitionBlock.css">
+
+    <script defer src="menuItemAnimation/menuItemAnimation.js"></script>
+    <script defer src="burgerMenu/burgerMenuAnimation.js"></script>
+    <script defer src="transitionBetweenPages/transitionBetweenPages.js"></script>
+    <script src="preloader/preloader.js" async></script>
+    <script src="piano.js" defer></script>
+    <script src="learn/learn.js" async></script>
+</head>
+
+<body>
+    <div class="preloader">
+        <svg class="preloader__treble-clef" width="139" height="315" viewBox="0 0 139 315" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path class="preloader__terble-clef_path" d="M34.5721 210.5C29.844 182.069 73 156.069 106 168.569C139 181.069 145.5 213 131.5 237C117.5 261 85.5 266.537 54.5 261C23.5 255.463 -22.8315 216.789 14.8673 150.231C47 93.5 50.9926 61.9179 50.9926 43.2891C50.9926 23.7082 39.4982 -7.92263 29.844 3.37399C20.1898 14.6706 22.2598 54.6482 50.9926 120.86C84.6549 198.431 93.6862 268.535 93.6862 290.31C93.6862 330.891 41.1403 312.904 66.5756 284.286" stroke="white"/>
+        </svg>            
+    </div>
+
+    <!-- main -->
+    <div class="main-header">
+
+        <header>
+            <a class="logo" data-animation="logo" data-transition-link="main-header">PIANORIUM</a>
+            <ul class="menu">
+                <li class="menu__item"  data-animation="menu-item">
+                    <a class="menu__link" data-transition-link="play">Play</a>
+                </li>
+                <li class="menu__item"  data-animation="menu-item">
+                    <a class="menu__link" data-transition-link="learn">Learn</a>
+                </li>
+                <li class="menu__item"  data-animation="menu-item">
+                    <a class="menu__link" data-transition-link="read">Read</a>
+                </li>
+                <!-- <li class="menu__item"  data-animation="menu-item">
+                    <a class="menu__link" data-transition-link="contact">Contact</a>
+                </li> -->
+            </ul>
+            <div class="burger-menu">
+                <div class="burger-menu__strips" data-animation="burger-menu">
+                    <div class="burger-menu__strip burger-menu__strip_1"></div>
+                    <div class="burger-menu__strip burger-menu__strip_2"></div>
+                    <div class="burger-menu__strip burger-menu__strip_3"></div>
+                </div>
+            </div>
+        </header>
+        <ul class="burger-menu__content">
+            <li class="menu__item">
+                <a href="" class="menu__link" data-transition-link="play">Play</a>
+            </li>
+            <li class="menu__item">
+                <a href="" class="menu__link" data-transition-link="learn">Learn</a>
+            </li>
+            <li class="menu__item">
+                <a href="" class="menu__link" data-transition-link="read">Read</a>
+            </li>
+            <!-- <li class="menu__item">
+                <a href="" class="menu__link" data-transition-link="contact">Contact</a>
+            </li> -->
+        </ul>
+        <div class="main-header__content" data-animation="main-content">
+            <div class="main-header__background">
+                <div class="main-header__blob main-header__blob_1">
+                    <svg width="440" height="407" viewBox="0 0 440 407" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M294.116 2.27067C385.382 26.7252 487.951 294.706 413.974 378.088C347.808 452.666 22.4208 365.479 2.40803 267.809C-19.9669 158.61 202.851 -22.1838 294.116 2.27067Z" fill="url(#paint0_linear_1_1389)"/>
+                        <defs>
+                        <linearGradient id="paint0_linear_1_1389" x1="294.116" y1="2.27067" x2="190.884" y2="387.541" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#164AE4" stop-opacity="0.5"/>
+                        <stop offset="1" stop-color="#164AE4"/>
+                        </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <div class="main-header__blob main-header__blob_2">
+                    <svg width="428" height="416" viewBox="0 0 428 416" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M76.7845 11.1049C158.611 -36.1376 420.629 80.8264 427.28 192.095C433.228 291.617 141.494 460.05 58.2793 405.138C-34.7573 343.744 -5.04179 58.3473 76.7845 11.1049Z" fill="#E8244F"/>
+                    </svg>
+                </div>
+            </div>
+            <h1 class="main-header__text">Learn piano with <br>pleasure</h1>
+        </div>
+    </div>
+
+    <!--play-->
+    <div class="play" style="display: none;">
+        <header class="play__header">
+            <a class="logo play__logo" data-animation="logo" data-transition-link="main-header">PIANORIUM</a>
+            <ul class="menu">
+                <li class="menu__item"  data-animation="menu-item">
+                    <a href="play.html" class="menu__link" data-transition-link="play">Play</a>
+                </li>
+                <li class="menu__item"  data-animation="menu-item">
+                    <a href="" class="menu__link" data-transition-link="learn">Learn</a>
+                </li>
+                <li class="menu__item"  data-animation="menu-item">
+                    <a href="" class="menu__link" data-transition-link="read">Read</a>
+                </li>
+                <!-- <li class="menu__item"  data-animation="menu-item">
+                    <a href="" class="menu__link" data-transition-link="contact">Contact</a>
+                </li> -->
+            </ul>
+            <div class="burger-menu">
+                <div class="burger-menu__strips" data-animation="burger-menu">
+                    <div class="burger-menu__strip burger-menu__strip_1"></div>
+                    <div class="burger-menu__strip burger-menu__strip_2"></div>
+                    <div class="burger-menu__strip burger-menu__strip_3"></div>
+                </div>
+            </div>
+        </header>
+        <ul class="burger-menu__content">
+            <li class="menu__item">
+                <a href="" class="menu__link" data-transition-link="play">Play</a>
+            </li>
+            <li class="menu__item">
+                <a href="" class="menu__link" data-transition-link="learn">Learn</a>
+            </li>
+            <li class="menu__item">
+                <a href="" class="menu__link" data-transition-link="read">Read</a>
+            </li>
+            <!-- <li class="menu__item">
+                <a href="" class="menu__link" data-transition-link="contact">Contact</a>
+            </li> -->
+        </ul>
+        <div class="piano-wrapper">
+            <div class="piano play__piano">
+                <p class="note-screen"></p>
+                <div class="piano_buttons">
+                    <button class="piano__button" data-piano-key="C2">q</button>
+                    <button class="piano__button piano__button_black" data-piano-key="Db2">2</button>
+                    <button class="piano__button" data-piano-key="D2">w</button>
+                    <button class="piano__button piano__button_black" data-piano-key="Eb2">3</button>
+                    <button class="piano__button" data-piano-key="E2">e</button>
+                    <button class="piano__button" data-piano-key="F2">r</button>
+                    <button class="piano__button piano__button_black" data-piano-key="Gb2">5</button>
+                    <button class="piano__button" data-piano-key="G2">t</button>
+                    <button class="piano__button piano__button_black" data-piano-key="Ab2">6</button>
+                    <button class="piano__button" data-piano-key="A2">y</button>
+                    <button class="piano__button piano__button_black" data-piano-key="Bb2">7</button>
+                    <button class="piano__button" data-piano-key="B2">u</button>
+                    <button class="piano__button" data-piano-key="C3">i</button>
+                    <button class="piano__button piano__button_black" data-piano-key="Db3">9</button>
+                    <button class="piano__button" data-piano-key="D3">o</button>
+                    <button class="piano__button piano__button_black" data-piano-key="Eb3">0</button>
+                    <button class="piano__button" data-piano-key="E3">p</button>
+                    <button class="piano__button" data-piano-key="F3">[</button>
+                    <button class="piano__button piano__button_black"data-piano-key="Gb3">=</button>
+                    <button class="piano__button" data-piano-key="G3">]</button>
+                    <button class="piano__button piano__button_black" data-piano-key="Ab3">a</button>
+                    <button class="piano__button" data-piano-key="A3">z</button>
+                    <button class="piano__button piano__button_black" data-piano-key="Bb3">s</button>
+                    <button class="piano__button" data-piano-key="B3">x</button>
+                    <button class="piano__button" data-piano-key="C4">c</button>
+                    <button class="piano__button piano__button_black" data-piano-key="Db4">f</button>
+                    <button class="piano__button" data-piano-key="D4">v</button>
+                    <button class="piano__button piano__button_black" data-piano-key="Eb4">9</button>
+                    <button class="piano__button" data-piano-key="E4">b</button>
+                    <button class="piano__button" data-piano-key="F4">n</button>
+                    <button class="piano__button piano__button_black" data-piano-key="Gb4">j</button>
+                    <button class="piano__button" data-piano-key="G4">m</button>
+                    <button class="piano__button piano__button_black" data-piano-key="Ab4">k</button>
+                    <button class="piano__button" data-piano-key="A4">,</button>
+                    <button class="piano__button piano__button_black" data-piano-key="Bb4">l</button>
+                    <button class="piano__button" data-piano-key="B4">.</button>
+                    <button class="piano__button" data-piano-key="C5">/</button>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <div class="learn" style="display: none;">
+        <header class="learn__header">
+            <a class="logo play__logo" data-animation="logo" data-transition-link="main-header">PIANORIUM</a>
+            <ul class="menu">
+                <li class="menu__item"  data-animation="menu-item">
+                    <a href="play.html" class="menu__link" data-transition-link="play">Play</a>
+                </li>
+                <li class="menu__item"  data-animation="menu-item">
+                    <a href="" class="menu__link" data-transition-link="learn">Learn</a>
+                </li>
+                <li class="menu__item"  data-animation="menu-item">
+                    <a href="" class="menu__link" data-transition-link="read">Read</a>
+                </li>
+                <!-- <li class="menu__item"  data-animation="menu-item">
+                    <a href="" class="menu__link" data-transition-link="contact">Contact</a>
+                </li> -->
+            </ul>
+            <div class="burger-menu">
+                <div class="burger-menu__strips" data-animation="burger-menu">
+                    <div class="burger-menu__strip burger-menu__strip_1"></div>
+                    <div class="burger-menu__strip burger-menu__strip_2"></div>
+                    <div class="burger-menu__strip burger-menu__strip_3"></div>
+                </div>
+            </div>
+        </header> 
+        <ul class="burger-menu__content">
+            <li class="menu__item">
+                <a href="" class="menu__link" data-transition-link="play">Play</a>
+            </li>
+            <li class="menu__item">
+                <a href="" class="menu__link" data-transition-link="learn">Learn</a>
+            </li>
+            <li class="menu__item">
+                <a href="" class="menu__link" data-transition-link="read">Read</a>
+            </li>
+            <!-- <li class="menu__item">
+                <a href="" class="menu__link" data-transition-link="contact">Contact</a>
+            </li> -->
+        </ul>
+
+        <div class="learn__menu-block">
+            <ul class="learn__option-menu">
+                <li class="learn__option learn__option_1" data-learn-option="1"><p>Chords</p></li>
+                <li class="learn__option learn__option_2" data-learn-option="2"><p>Stave</p></li>
+                <li class="learn__option learn__option_3" data-learn-option="3"><p>Solfeggio</p></li>
+            </ul>
+        </div>
+
+        <div class="learn__option-block learn__option-block_1" data-learn-option-block="1" style="opacity: 0;">
+        </div>
+
+        <div class="learn__option-block learn__option-block_2" data-learn-option-block="2" style="opacity: 0;">
+        </div>
+
+        <div class="learn__option-block learn__option-block_3" data-learn-option-block="3" style="opacity: 0;">
+        </div>
+
+    </div>
+
+    <div class="transition-block">
+        <svg class="transition__treble-clef" width="139" height="315" viewBox="0 0 139 315" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path class="preloader__terble-clef_path" d="M34.5721 210.5C29.844 182.069 73 156.069 106 168.569C139 181.069 145.5 213 131.5 237C117.5 261 85.5 266.537 54.5 261C23.5 255.463 -22.8315 216.789 14.8673 150.231C47 93.5 50.9926 61.9179 50.9926 43.2891C50.9926 23.7082 39.4982 -7.92263 29.844 3.37399C20.1898 14.6706 22.2598 54.6482 50.9926 120.86C84.6549 198.431 93.6862 268.535 93.6862 290.31C93.6862 330.891 41.1403 312.904 66.5756 284.286" stroke="black"/>
+        </svg> 
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+._loading {
+    transform: translateX(-20px);
+    opacity: 0;
+    transition: all .5s;
+}
+
+@media (max-width:580px) {
+    .burger-menu {
+        display: block;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        right: 0; 
+        width: 20vw;
+        height: 10vh;
+        z-index: 5;
+    }
+    .menu {
+        display: none;
+        transition: all 0s;
+    }
+}
