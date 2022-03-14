@@ -32,7 +32,7 @@
     <script defer src="transitionBetweenPages/transitionBetweenPages.js"></script>
     <script src="preloader/preloader.js" async></script>
     <script src="piano.js" defer></script>
-    <script src="learn/learn.js" async></script>
+    <script src="learn/learn.js" defer></script>
 </head>
 
 <body>
@@ -232,24 +232,42 @@
                 <a href="" class="menu__link" data-transition-link="contact">Contact</a>
             </li> -->
         </ul>
-
-        <div class="learn__menu-block">
-            <ul class="learn__option-menu">
-                <li class="learn__option learn__option_1" data-learn-option="1"><p>Chords</p></li>
-                <li class="learn__option learn__option_2" data-learn-option="2"><p>Stave</p></li>
-                <li class="learn__option learn__option_3" data-learn-option="3"><p>Solfeggio</p></li>
-            </ul>
+        <div class="learn__content">
+            <div class="learn__option-wrapper">
+                <div class="learn__option-block learn__option-block_1" data-learn-option-block="1">
+                    <div class="learn__task learn__task_1"><p class="learn__chords-display"></p></div>
+                    <div class="learn__control-wrapper">
+                        <a href="#" class="learn__control-button learn__control-button_1">Admit</a>
+                        <a href="#" class="learn__control-button learn__control-button_2">Refresh</a>
+                    </div>
+                </div>
+    
+                <div class="learn__option-block learn__option-block_2" data-learn-option-block="2">
+                    <div class="learn__task learn__task_2"><img src="" alt="note"></div>
+                    <div class="learn__control-wrapper">
+                        <a href="#" class="learn__control-button learn__control-button_1">Admit</a>
+                        <a href="#" class="learn__control-button learn__control-button_2">Refresh</a>
+                    </div>
+                </div>
+    
+                <div class="learn__option-block learn__option-block_3" data-learn-option-block="3">
+                    <div class="learn__task learn__task_3"><p class="learn__sound-display"><img src="images/play.svg" alt=""></p></div>
+                    <div class="learn__control-wrapper">
+                        <a href="#" class="learn__control-button learn__control-button_1">Admit</a>
+                        <a href="#" class="learn__control-button learn__control-button_2">Refresh</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="learn__menu-block">
+                <ul class="learn__option-menu">
+                    <li class="learn__option learn__option_1" data-learn-option="1"><p>Chords</p></li>
+                    <li class="learn__option learn__option_2" data-learn-option="2"><p>Stave</p></li>
+                    <li class="learn__option learn__option_3" data-learn-option="3"><p>Solfeggio</p></li>
+                </ul>
+            </div>
         </div>
-
-        <div class="learn__option-block learn__option-block_1" data-learn-option-block="1" style="opacity: 0;">
-        </div>
-
-        <div class="learn__option-block learn__option-block_2" data-learn-option-block="2" style="opacity: 0;">
-        </div>
-
-        <div class="learn__option-block learn__option-block_3" data-learn-option-block="3" style="opacity: 0;">
-        </div>
-
+        
     </div>
 
     <div class="transition-block">
