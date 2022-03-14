@@ -4,14 +4,23 @@
     min-width: 100vw;
     position: relative;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.learn__content {
+    display: flex;
+    flex-grow: 1;
+    min-width: 100vw;
+    justify-content: center;
+    align-items: center;
 }
 
 .learn__menu-block {
     display: flex;
-    position: absolute;
-    min-width: 100vw;
+    flex-grow: 0;
     top: 0;
-    min-height: 100vh;
+    min-height: 100%;
     align-items: center;
     justify-content: center;
     flex-direction: column;
@@ -21,7 +30,7 @@
     list-style-type: none;
 }
 
-.learn__option {
+.learn__option, .learn__control-button {
     z-index: 1;
     cursor: pointer;
     font-size: 2rem;
@@ -33,9 +42,10 @@
     text-align: center;
     position: relative;
     transition: all .5s;
+    transform: translateX(0px);
 }
 
-.learn__option::before {
+.learn__option::before, .learn__control-button::before{
     content: "";
     position: absolute;
     display: block;
@@ -49,12 +59,20 @@
     transition: all .5s;
 }
 
-.learn__option:hover::before {
+.learn__option:hover::before, .learn__control-button:hover::before {
     width: 100%;
 }
 
-.learn__option:hover {
+.learn__option:hover, .learn__control-button:hover {
     color: #000;
+}
+
+.learn__option._choosed {
+    color: #000;
+}
+
+.learn__option._choosed::before {
+    width: 100%;
 }
 
 .learn__option_1 {
@@ -69,7 +87,66 @@
     transform: translateX(50px);
 }
 
+.learn__option._active {
+    transform: translateX(0px);
+}
+
+.learn__option-wrapper {
+    flex-grow: 0;
+    display: none;
+    overflow: hidden;
+    transition: flex-grow 1s;
+}
+
+.learn__option-wrapper._active {
+    flex-grow: 2;
+}
+
 .learn__option-block {
+    padding: 30px;
     position: absolute;
-    z-index: 0;
+    z-index: -1;
+    opacity: 0;
+    display: none;
+    transition: opacity 2s, flex-grow 3s;
+}
+
+.learn__option-block._choosed {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    z-index: 2;
+}
+
+.learn__control-button {
+    display: inline-block;
+    margin: 30px 30px 30px 0;
+}
+
+.learn__option-block_2 .learn__control-button {
+    margin: 10px 30px 20px 0px;
+}
+
+.learn__chords-display {
+    font-size: 2rem;
+}
+
+.learn__option-block_1 .piano__button, .learn__option-block_2 .piano__button, .learn__option-block_3 .piano__button {
+    transition: all .3s;
+}
+
+.learn__option-block_1 .piano__button._choosed, .learn__option-block_2 .piano__button._choosed, .learn__option-block_3 .piano__button._choosed {
+    background-color: rgb(252, 255, 94);
+}
+
+.learn__option-block_1 .piano__button.piano__button_black._choosed, .learn__option-block_2 .piano__button.piano__button_black._choosed, .learn__option-block_3 .piano__button.piano__button_black._choosed {
+    background-color: rgb(196, 117, 0);
+}
+
+.learn__option-block_1 .piano__button._right, .learn__option-block_2 .piano__button._right, .learn__option-block_3 .piano__button._right {
+    background-color: rgb(119, 255, 92);
+}
+
+.learn__option-block_1 .piano__button.piano__button_black._right, .learn__option-block_2 .piano__button.piano__button_black._right, .learn__option-block_3 .piano__button.piano__button_black._right  {
+    background-color: rgb(17, 143, 0);
 }
