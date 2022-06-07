@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="play.css">
     <link rel="stylesheet" href="learn/learn.css">
+    <link rel="stylesheet" href="read/read.css">
     <link rel="stylesheet" href="menuItemAnimation/menuItemAnimation.css">
     <link rel="stylesheet" href="burgerMenu/burgerMenu.css">
     <link rel="stylesheet" href="preloader/preloader.css">
@@ -33,6 +34,7 @@
     <script src="preloader/preloader.js" async></script>
     <script src="piano.js" defer></script>
     <script src="learn/learn.js" defer></script>
+    <script src="read/read.js" defer></script>
 </head>
 
 <body>
@@ -268,6 +270,65 @@
             </div>
         </div>
         
+    </div>
+
+    <div class="read" style="display: none;">
+        <header class="learn__header">
+            <a class="logo play__logo" data-animation="logo" data-transition-link="main-header">PIANORIUM</a>
+            <ul class="menu">
+                <li class="menu__item"  data-animation="menu-item">
+                    <a href="play.html" class="menu__link" data-transition-link="play">Play</a>
+                </li>
+                <li class="menu__item"  data-animation="menu-item">
+                    <a href="" class="menu__link" data-transition-link="learn">Learn</a>
+                </li>
+                <li class="menu__item"  data-animation="menu-item">
+                    <a href="" class="menu__link" data-transition-link="read">Read</a>
+                </li>
+                <!-- <li class="menu__item"  data-animation="menu-item">
+                    <a href="" class="menu__link" data-transition-link="contact">Contact</a>
+                </li> -->
+            </ul>
+            <div class="burger-menu">
+                <div class="burger-menu__strips" data-animation="burger-menu">
+                    <div class="burger-menu__strip burger-menu__strip_1"></div>
+                    <div class="burger-menu__strip burger-menu__strip_2"></div>
+                    <div class="burger-menu__strip burger-menu__strip_3"></div>
+                </div>
+            </div>
+        </header> 
+        <ul class="burger-menu__content">
+            <li class="menu__item">
+                <a href="" class="menu__link" data-transition-link="play">Play</a>
+            </li>
+            <li class="menu__item">
+                <a href="" class="menu__link" data-transition-link="learn">Learn</a>
+            </li>
+            <li class="menu__item">
+                <a href="" class="menu__link" data-transition-link="read">Read</a>
+            </li>
+            <!-- <li class="menu__item">
+                <a href="" class="menu__link" data-transition-link="contact">Contact</a>
+            </li> -->
+        </ul>
+        <div class="slider read__slider">
+            <div class="slider__item" data-slider-id="1">
+                placeholder1
+            </div>
+            <div class="slider__item" data-slider-id="2">
+                placeholder2
+            </div>
+            <div class="slider__item" data-slider-id="3">
+                placeholder3
+            </div>
+            <div class="slider__item" data-slider-id="4">
+                placeholder4
+            </div>
+            <div class="slider__item" data-slider-id="5">
+                placeholder5
+            </div>
+            <div class="slider__indicator-wrapper"></div>
+        </div>
     </div>
 
     <div class="transition-block">
