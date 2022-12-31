@@ -3,27 +3,21 @@ import CreateTask from "./CreateTask.jsx"
 import Task from "./Task.jsx"
 import { useSelector } from "react-redux"
 
-const createTaskObject = function(text, key, ...subtasksFunctions) {
-    return {
-        text,
-        key,
-        subtasks: subtasksFunctions
-    }
-}
-
 const taskStructureTransform = function(tasks) {
     let structure=[];
-    for (const [key, value] of Object.entries(tasks)) {
+    for (const [keyId, value] of Object.entries(tasks)) {
         let {text, path, subtasks, deleted}=value
         
         if(deleted) continue
 
-        structure.push(<Task text={text} path={path}/>);
+        let key = path
+        structure.push(<Task text={text} path={path} key={key}/>);
 
         if(Object.entries(subtasks).length>0) {
             structure.push(taskStructureTransform(subtasks))
         }
     }
+    //ul key!!!
     return <ul>{structure}</ul>
 }
 
@@ -38,4 +32,4 @@ const App = function(props) {
     )
 }
 
-export {App as default, taskStructureTransform, createTaskObject}
+export {App as default, taskStructureTransform}

@@ -1,129 +1,216 @@
-import {taskStructureTransform, createTaskObject} from "../src/App.jsx";
+import {taskStructureTransform} from "../src/App.jsx";
 // import CreateTask from "../src/CreateTask.jsx"
 import Task from "../src/Task.jsx"
 import React from "react";
 
 
 //depth 1
-const tasksTest1 = [
-    createTaskObject("option 1", "0"),
-    createTaskObject("option 2", "1"),
-    createTaskObject("option 3", "2")
-];
-const tasksTest1Object = [
-    {
+const tasksTest1Object = {
+    0:{
         text: "option 1",
-        key: "0",
+        path: "0",
+        deleted: false,
         subtasks: []
     },
-    {
+    1:{
         text: "option 2",
-        key: "1",
+        path: "1",
+        deleted: false,
         subtasks: []
     },
-    {
+    2:{
         text: "option 3",
-        key: "2",
+        path: "2",
+        deleted: false,
         subtasks: []
     }
-]
+}
 const tasksTest1Jsx = (
     <ul>{[
-        <Task text="option 1" key="0"/>,
-        <Task text="option 2" key="1"/>,
-        <Task text="option 3" key="2"/>
+        <Task text="option 1" path="0" key="0"/>,
+        <Task text="option 2" path="1" key="1"/>,
+        <Task text="option 3" path="2" key="2"/>
+    ]}</ul>
+);
+const tasksTest1Object_deleted0 = {
+    0:{
+        text: "option 1",
+        path: "0",
+        deleted: true,
+        subtasks: []
+    },
+    1:{
+        text: "option 2",
+        path: "1",
+        deleted: false,
+        subtasks: []
+    },
+    2:{
+        text: "option 3",
+        path: "2",
+        deleted: false,
+        subtasks: []
+    }
+}
+const tasksTest1Jsx_deleted0 = (
+    <ul>{[
+        <Task text="option 2" path="1" key="1"/>,
+        <Task text="option 3" path="2" key="2"/>
     ]}</ul>
 );
 
-
-
 //depth 2
-const tasksTest2 = [
-    createTaskObject("option 1", "0", createTaskObject("option 11", "00")),
-    createTaskObject("option 2", "1", createTaskObject("option 21", "10")),
-    createTaskObject("option 3", "2",  createTaskObject("option 31", "20"))
-];
-const tasksTest2Object = [
-    {
+const tasksTest2Object = {
+    0:{
         text: "option 1",
-        key: "0",
+        path: "0",
         subtasks: [
             {
                 text: "option 11",
-                key: "00",
+                path: "0 0",
                 subtasks: []
             }
         ]
     },
-    {
+    1:{
         text: "option 2",
-        key: "1",
+        path: "1",
         subtasks: [
             {
                 text: "option 21",
-                key: "10",
+                path: "1 0",
+                key: "1 0",
                 subtasks: []
             }
         ]
     },
-    {
+    2:{
         text: "option 3",
-        key: "2",
+        path: "2",
         subtasks: [
             {
                 text: "option 31",
-                key: "20",
+                path: "2 0",
                 subtasks: []
             }
         ]
     }
-]
+}
 const tasksTest2Jsx = (
     <ul>{[
-        <Task text="option 1" key="0"/>,
+        <Task text="option 1" path="0" key="0"/>,
         <ul>{[
-            <Task text="option 11" key="00"/>
+            <Task text="option 11" path="0 0" key="0 0"/>
         ]}</ul>,
-        <Task text="option 2" key="1"/>,
+        <Task text="option 2" path="1" key="1"/>,
         <ul>{[
-            <Task text="option 21" key="10"/>
+            <Task text="option 21" path="1 0" key="1 0"/>
         ]}</ul>,
-        <Task text="option 3" key="2"/>,
+        <Task text="option 3" path="2" key="2"/>,
         <ul>{[
-            <Task text="option 31" key="20"/>
+            <Task text="option 31" path="2 0" key="2 0"/>
         ]}</ul>
     ]}</ul>
-);
+); 
 
-describe("createTaskObject", ()=>{
+//depth 3
+const tasksTest3Object = {
+    0:{
+        text: "option 1",
+        path: "0",
+        subtasks: [{
+                text: "option 11",
+                path: "0 0",
+                subtasks: [{
+                    text: "option 111",
+                    path: "0 0 0",
+                    subtasks: []
+                }]
+        }]
+    },
+    1:{
+        text: "option 2",
+        path: "1",
+        subtasks: [
+            {
+                text: "option 21",
+                path: "1 0",
+                key: "1 0",
+                subtasks: [{
+                    text: "option 211",
+                    path: "1 0 0",
+                    subtasks: []
+                }]
+            }
+        ]
+    },
+    2:{
+        text: "option 3",
+        path: "2",
+        subtasks: [
+            {
+                text: "option 31",
+                path: "2 0",
+                subtasks: [{
+                    text: "option 311",
+                    path: "2 0 0",
+                    subtasks: []
+                }]
+            }
+        ]
+    }
+}
 
-    describe("createTaskObject pattern check", ()=>{
-        let objectPattern = {
-            text: "text",
-            subtasks: []
-        }
-        test ("checking returned task Object structure", ()=>{
-            expect(JSON.stringify(createTaskObject("text"))).toEqual(JSON.stringify(objectPattern))
-        })
-    })
-
-    describe("createTaskObject depth check", ()=>{
-        test("createTaskObject should create task object with any depth and return it in tasks array [depth=1]", ()=>{
-            expect(JSON.stringify(tasksTest1)).toEqual(JSON.stringify(tasksTest1Object))
-        })
-        test("createTaskObject should create task object with any depth and return it in tasks array [depth=2]", ()=>{
-            expect(JSON.stringify(tasksTest2)).toEqual(JSON.stringify(tasksTest2Object))
-        })
-    })
-
-})
+const tasksTest3Jsx = (
+    <ul>{[
+        <Task text="option 1" path="0" key="0"/>,
+        <ul>{[
+            <Task text="option 11" path="0 0" key="0 0"/>,
+            <ul>{[
+                <Task text="option 111" path="0 0 0" key="0 0 0"/>
+            ]}</ul>,
+        ]}</ul>,
+        <Task text="option 2" path="1" key="1"/>,
+        <ul>{[
+            <Task text="option 21" path="1 0" key="1 0"/>,
+            <ul>{[
+                <Task text="option 211" path="1 0 0" key="1 0 0"/>
+            ]}</ul>,
+        ]}</ul>,
+        <Task text="option 3" path="2" key="2"/>,
+        <ul>{[
+            <Task text="option 31" path="2 0" key="2 0"/>,
+            <ul>{[
+                <Task text="option 311" path="2 0 0" key="2 0 0"/>
+            ]}</ul>,
+        ]}</ul>
+    ]}</ul>
+); 
 
 describe("taskStructureTransform", ()=>{
-    test("taskStructureTransform should transform tasks object into jsx and return it[depth=1]", ()=>{
-        expect(JSON.stringify(taskStructureTransform(tasksTest1Object))).toEqual(JSON.stringify((tasksTest1Jsx)))
+    describe("[depth=1]", ()=>{
+        test("taskStructureTransform should transform tasks object into jsx and return it", ()=>{
+            expect(JSON.stringify(taskStructureTransform(tasksTest1Object))).toEqual(JSON.stringify((tasksTest1Jsx)))
+        })
+        describe("delete possibility, if property \"deleted\" is true", ()=>{
+            test("path:\"0\" is deleted correctly", ()=>{
+                expect(JSON.stringify(taskStructureTransform(tasksTest1Object_deleted0))).toEqual(JSON.stringify((tasksTest1Jsx_deleted0)))
+            })
+            test("path:\"1\" is deleted correctly", ()=>{
+                expect(JSON.stringify(taskStructureTransform(tasksTest1Object_deleted0))).toEqual(JSON.stringify((tasksTest1Jsx_deleted0)))
+            })
+            test("path:\"2\" is deleted correctly", ()=>{
+                expect(JSON.stringify(taskStructureTransform(tasksTest1Object_deleted0))).toEqual(JSON.stringify((tasksTest1Jsx_deleted0)))
+            })
+        })
+        
     })
+    
     test("taskStructureTransform should transform tasks object into jsx and return it[depth=2]", ()=>{
         expect(JSON.stringify(taskStructureTransform(tasksTest2Object))).toEqual(JSON.stringify(tasksTest2Jsx))
+    })
+    test("taskStructureTransform should transform tasks object into jsx and return it[depth=3]", ()=>{
+        expect(JSON.stringify(taskStructureTransform(tasksTest3Object))).toEqual(JSON.stringify(tasksTest3Jsx))
     })
 })
 

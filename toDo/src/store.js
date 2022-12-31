@@ -86,4 +86,5 @@ const reducer = function(state = initialState, action) {
 
 let store = configureStore({reducer:reducer})
 
-export default store
+
+export {store as default, reducer, initialState}
