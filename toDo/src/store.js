@@ -1,46 +1,30 @@
 import { configureStore } from "@reduxjs/toolkit";
 
 let initialState = {
-    tasks: {
-    },
+    tasks: [],
 }
 
 const reducer = function(state = initialState, action) {
     switch (action.type) {
         case "addTask" : {
             let {path, text} = {...action.payload};
-            let parentLocation = path.trim().split(" ");
+            let parentLocation = path.split(" ");
             let taskLocation = parentLocation.pop()
-
-            let searchLocationAndAddTask = function(taskObject, parentLocation, taskLocation){
-                let result
-                if(parentLocation.length!=0) {
-                    let currentSearch = parentLocation.shift()
-                    let currentTask = taskObject[currentSearch]
-                    let currentSubtasks = currentTask.subtasks
-                    result = {...taskObject,
-                                 [currentSearch]:{
-                                    ...currentTask,
-                                    subtasks: {
-                                        ...searchLocationAndAddTask(currentSubtasks, parentLocation, taskLocation)
-                                    }
-                                 }
-                    }
-                } else {
-                    result = {...taskObject,
-                                [taskLocation]: {
-                                    text, path, deleted: false,
-                                    subtasks: {}
-                                }
-                    }
+            let newStore = function(currTasks) {
+                if (parentLocation.length>0){
+                    return currTasks.map((v,iter)=>{
+                        if (iter==Number(parentLocation.shift())) {
+                            return {...v, subtasks:newStore(v.subtasks)}
+                        }
+                    })
                 }
-                return result
+                else {
+                    return [...currTasks, {text,path,deleted:false,subtasks:[]}]
+                }
             }
-
-            let newTasks = searchLocationAndAddTask(state.tasks, parentLocation, taskLocation);
-            
             return {...state,
-                tasks: newTasks}
+                tasks: newStore(state.tasks)
+            }
         }
 
         case "deleteTask": {

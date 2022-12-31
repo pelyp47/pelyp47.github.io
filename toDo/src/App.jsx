@@ -5,8 +5,8 @@ import { useSelector } from "react-redux"
 
 const taskStructureTransform = function(tasks) {
     let structure=[];
-    for (const [keyId, value] of Object.entries(tasks)) {
-        let {text, path, subtasks, deleted}=value
+    for (let i = 0; i<tasks.length; i++) {
+        let {text, path, subtasks, deleted}=tasks[i]
         
         if(deleted) continue
 
