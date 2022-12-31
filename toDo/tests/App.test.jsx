@@ -5,26 +5,26 @@ import React from "react";
 
 
 //depth 1
-const tasksTest1Object = {
-    0:{
+const tasksTest1Object = [
+    {
         text: "option 1",
         path: "0",
         deleted: false,
         subtasks: []
     },
-    1:{
+    {
         text: "option 2",
         path: "1",
         deleted: false,
         subtasks: []
     },
-    2:{
+    {
         text: "option 3",
         path: "2",
         deleted: false,
         subtasks: []
     }
-}
+]
 const tasksTest1Jsx = (
     <ul>{[
         <Task text="option 1" path="0" key="0"/>,
@@ -32,26 +32,26 @@ const tasksTest1Jsx = (
         <Task text="option 3" path="2" key="2"/>
     ]}</ul>
 );
-const tasksTest1Object_deleted0 = {
-    0:{
+const tasksTest1Object_deleted0 = [
+    {
         text: "option 1",
         path: "0",
         deleted: true,
         subtasks: []
     },
-    1:{
+    {
         text: "option 2",
         path: "1",
         deleted: false,
         subtasks: []
     },
-    2:{
+    {
         text: "option 3",
         path: "2",
         deleted: false,
         subtasks: []
     }
-}
+]
 const tasksTest1Jsx_deleted0 = (
     <ul>{[
         <Task text="option 2" path="1" key="1"/>,
@@ -60,8 +60,8 @@ const tasksTest1Jsx_deleted0 = (
 );
 
 //depth 2
-const tasksTest2Object = {
-    0:{
+const tasksTest2Object = [
+    {
         text: "option 1",
         path: "0",
         subtasks: [
@@ -72,7 +72,7 @@ const tasksTest2Object = {
             }
         ]
     },
-    1:{
+    {
         text: "option 2",
         path: "1",
         subtasks: [
@@ -84,7 +84,7 @@ const tasksTest2Object = {
             }
         ]
     },
-    2:{
+    {
         text: "option 3",
         path: "2",
         subtasks: [
@@ -95,7 +95,7 @@ const tasksTest2Object = {
             }
         ]
     }
-}
+]
 const tasksTest2Jsx = (
     <ul>{[
         <Task text="option 1" path="0" key="0"/>,
@@ -114,8 +114,8 @@ const tasksTest2Jsx = (
 ); 
 
 //depth 3
-const tasksTest3Object = {
-    0:{
+const tasksTest3Object = [
+    {
         text: "option 1",
         path: "0",
         subtasks: [{
@@ -128,7 +128,7 @@ const tasksTest3Object = {
                 }]
         }]
     },
-    1:{
+    {
         text: "option 2",
         path: "1",
         subtasks: [
@@ -144,7 +144,7 @@ const tasksTest3Object = {
             }
         ]
     },
-    2:{
+    {
         text: "option 3",
         path: "2",
         subtasks: [
@@ -159,7 +159,7 @@ const tasksTest3Object = {
             }
         ]
     }
-}
+]
 
 const tasksTest3Jsx = (
     <ul>{[
