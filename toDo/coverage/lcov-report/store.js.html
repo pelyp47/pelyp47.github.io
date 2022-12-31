@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">16.12% </span>
+                <span class="strong">45.16% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>5/31</span>
+                <span class='fraction'>14/31</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">25% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>2/8</span>
+                <span class='fraction'>4/8</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">33.33% </span>
+                <span class="strong">66.66% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/3</span>
+                <span class='fraction'>2/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">16.12% </span>
+                <span class="strong">45.16% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>5/31</span>
+                <span class='fraction'>14/31</span>
             </div>
         
             
@@ -161,7 +161,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -199,16 +199,17 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -216,20 +217,19 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -287,13 +287,13 @@ const reducer = function(state = initialState, action) {
                 tasks: newTasks}
         }
 &nbsp;
-<span class="branch-1 cbranch-no" title="branch not covered" >        case "deleteTask": {</span>
-            let {path} = <span class="cstat-no" title="statement not covered" >{...action.payload};</span>
-            let parentLocation = <span class="cstat-no" title="statement not covered" >path.trim().split(" ");</span>
-            let taskLocation = <span class="cstat-no" title="statement not covered" >parentLocation.pop();</span>
-            let searchLocationAndAddTask = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >fu</span>nction(taskObject, parentLocation, taskLocation) {</span>
+        case "deleteTask": {
+            let {path} = {...action.payload};
+            let parentLocation = path.trim().split(" ");
+            let taskLocation = parentLocation.pop();
+            let searchLocationAndAddTask = function(taskObject, parentLocation, taskLocation) {
                 let result
-<span class="cstat-no" title="statement not covered" >                if(parentLocation.length!=0) {</span>
+                <span class="missing-if-branch" title="if path not taken" >I</span>if(parentLocation.length!=0) {
                     let currentSearch = <span class="cstat-no" title="statement not covered" >parentLocation.shift()</span>
                     let currentTask = <span class="cstat-no" title="statement not covered" >taskObject[currentSearch]</span>
                     let currentSubtasks = <span class="cstat-no" title="statement not covered" >currentTask.subtasks</span>
@@ -306,19 +306,19 @@ const reducer = function(state = initialState, action) {
                                 }
                     }
                 } else {
-<span class="cstat-no" title="statement not covered" >                result = {...taskObject,</span>
+                result = {...taskObject,
                                 [taskLocation]: {
                                     text:"", path, deleted: true,
-                                    subtasks: {}
+                                    subtasks: []
                                 }
                     }
                 }
-<span class="cstat-no" title="statement not covered" >                return result</span>
+                return result
             }
 &nbsp;
-            let newTasks = <span class="cstat-no" title="statement not covered" >searchLocationAndAddTask(state.tasks, parentLocation, taskLocation);</span>
+            let newTasks = searchLocationAndAddTask(state.tasks, parentLocation, taskLocation);
             
-<span class="cstat-no" title="statement not covered" >            return {...state,</span>
+            return {...state,
                 tasks: newTasks}
         }
 &nbsp;
@@ -337,7 +337,7 @@ export {store as default, reducer, initialState}</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Sat Dec 31 2022 02:13:39 GMT+0100 (за центральноєвропейським стандартним часом)
+                at Sat Dec 31 2022 02:53:59 GMT+0100 (за центральноєвропейським стандартним часом)
             </div>
         <script src="prettify.js"></script>
         <script>

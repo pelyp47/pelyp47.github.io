@@ -2,7 +2,6 @@ import { configureStore } from "@reduxjs/toolkit";
 
 let initialState = {
     tasks: {
-        
     },
 }
 
@@ -66,7 +65,7 @@ const reducer = function(state = initialState, action) {
                 result = {...taskObject,
                                 [taskLocation]: {
                                     text:"", path, deleted: true,
-                                    subtasks: {}
+                                    subtasks: []
                                 }
                     }
                 }
