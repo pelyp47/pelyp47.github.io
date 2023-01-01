@@ -10,6 +10,7 @@ function CreateTask(props) {
     let dispatch = useDispatch()
 
     let submitTask = function(){
+        if(!text) return
         let formatedPath = (path+currentSubtaskCounter).trim()
         dispatch({type: "addTask", payload: {path: formatedPath, text: text}});
         changeCurrentSubtaskCounter(" "+(Number(currentSubtaskCounter)+1));

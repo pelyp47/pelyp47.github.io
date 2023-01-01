@@ -60,7 +60,7 @@ describe("Initial state value", ()=>{
         expect(Object.keys(initialState).includes("tasks")).toBe(true)
     })
     test("tasks should be an object", ()=>{
-        expect(initialState.tasks).toBeInstanceOf(Object)
+        expect(Array.isArray(initialState.tasks)).toEqual(true)
     })
     test("taksk should be empty", ()=>{
         expect(Object.keys(initialState.tasks).length).toEqual(0)
@@ -170,6 +170,9 @@ describe("Reducer tests", ()=>{
             test("path:0, deleted task should have empty subtasks", ()=>{
                 expect(reducer(testInitialState, {type:"deleteTask", payload:{path:"0"}}).tasks[0].subtasks.length).toEqual(0)
             })
+            test("path:0, deleted task should have \"deleted:true\"", ()=>{
+                expect(reducer(testInitialState, {type:"deleteTask", payload:{path:"0"}}).tasks[0].deleted).toEqual(true)
+            })
             test("path:1",()=>{
                 let testInitialState_delete1 = {
                     tasks: {
@@ -216,6 +219,9 @@ describe("Reducer tests", ()=>{
             })
             test("path:1, deleted task should have empty subtasks", ()=>{
                 expect(reducer(testInitialState, {type:"deleteTask", payload:{path:"1"}}).tasks[1].subtasks.length).toEqual(0)
+            })
+            test("path:1, deleted task should have \"deleted:true\"", ()=>{
+                expect(reducer(testInitialState, {type:"deleteTask", payload:{path:"1"}}).tasks[1].deleted).toEqual(true)
             })
             test("path:2",()=>{
                 let testInitialState_delete2 = {
@@ -264,6 +270,151 @@ describe("Reducer tests", ()=>{
             })
             test("path:2, deleted task should have empty subtasks", ()=>{
                 expect(reducer(testInitialState, {type:"deleteTask", payload:{path:"2"}}).tasks[2].subtasks.length).toEqual(0)
+            })
+            test("path:2, deleted task should have \"deleted:true\"", ()=>{
+                expect(reducer(testInitialState, {type:"deleteTask", payload:{path:"2"}}).tasks[2].deleted).toEqual(true)
+            })
+        })
+        describe("[depth=2]", ()=>{
+            test("path=00", ()=>{
+                let testInitialState_delete00 = {
+                    tasks: {
+                        0:{
+                            text: "option 1",
+                            path: "0",
+                            subtasks: [{
+                                    text: "",
+                                    path: "0 0",
+                                    deleted: true,
+                                    subtasks: []
+                            }]
+                        },
+                        1:{
+                            text: "option 2",
+                            path: "1",
+                            subtasks: [
+                                {
+                                    text: "option 21",
+                                    path: "1 0",
+                                    subtasks: [{
+                                        text: "option 211",
+                                        path: "1 0 0",
+                                        subtasks: []
+                                    }]
+                                }
+                            ]
+                        },
+                        2:{
+                            text: "option 3",
+                            path: "2",
+                            subtasks: [
+                                {
+                                    text: "option 31",
+                                    path: "2 0",
+                                    subtasks: [{
+                                        text: "option 311",
+                                        path: "2 0 0",
+                                        subtasks: []
+                                    }]
+                                }
+                            ]
+                        }
+                    }
+                }
+                expect(JSON.stringify(reducer(testInitialState,{type:"deleteTask", payload:{path:"0 0"}}))).toEqual(JSON.stringify(testInitialState_delete00))
+            })
+            test("path=10", ()=>{
+                let testInitialState_delete1 = {
+                    tasks: {
+                        0:{
+                            text: "option 1",
+                            path: "0",
+                            subtasks: [{
+                                    text: "option 11",
+                                    path: "0 0",
+                                    subtasks: [{
+                                        text: "option 111",
+                                        path: "0 0 0",
+                                        subtasks: []
+                                    }]
+                            }]
+                        },
+                        1:{
+                            text: "option 2",
+                            path: "1",
+                            subtasks: [
+                                {
+                                    text: "",
+                                    path: "1 0",
+                                    deleted: true,
+                                    subtasks: []
+                                }
+                            ]
+                        },
+                        2:{
+                            text: "option 3",
+                            path: "2",
+                            subtasks: [
+                                {
+                                    text: "option 31",
+                                    path: "2 0",
+                                    subtasks: [{
+                                        text: "option 311",
+                                        path: "2 0 0",
+                                        subtasks: []
+                                    }]
+                                }
+                            ]
+                        }
+                    }
+                }
+            })
+            test("path=20", ()=>{
+                let testInitialState_delete21 = {
+                    tasks: {
+                        0:{
+                            text: "option 1",
+                            path: "0",
+                            subtasks: [{
+                                    text: "option 11",
+                                    path: "0 0",
+                                    subtasks: [{
+                                        text: "option 111",
+                                        path: "0 0 0",
+                                        subtasks: []
+                                    }]
+                            }]
+                        },
+                        1:{
+                            text: "option 2",
+                            path: "1",
+                            subtasks: [
+                                {
+                                    text: "option 21",
+                                    path: "1 0",
+                                    key: "1 0",
+                                    subtasks: [{
+                                        text: "option 211",
+                                        path: "1 0 0",
+                                        subtasks: []
+                                    }]
+                                }
+                            ]
+                        },
+                        2:{
+                            text: "option 3",
+                            path: "2",
+                            subtasks: [
+                                {
+                                    text: "",
+                                    deleted: true,
+                                    path: "2 0",
+                                    subtasks: []
+                                }
+                            ]
+                        }
+                    }
+                }
             })
         })    
     })

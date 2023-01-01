@@ -1,4 +1,4 @@
-import { configureStore } from "@reduxjs/toolkit";
+import { configureStore, current } from "@reduxjs/toolkit";
 
 let initialState = {
     tasks: [],
@@ -12,9 +12,13 @@ const reducer = function(state = initialState, action) {
             let taskLocation = parentLocation.pop()
             let newStore = function(currTasks) {
                 if (parentLocation.length>0){
+                    let curIter = parentLocation.shift()
                     return currTasks.map((v,iter)=>{
-                        if (iter==Number(parentLocation.shift())) {
+                        if (iter==Number(curIter)) {
                             return {...v, subtasks:newStore(v.subtasks)}
+                        }
+                        else {
+                            return v
                         }
                     })
                 }
@@ -29,37 +33,34 @@ const reducer = function(state = initialState, action) {
 
         case "deleteTask": {
             let {path} = {...action.payload};
-            let parentLocation = path.trim().split(" ");
+            let parentLocation = path.split(" ");
             let taskLocation = parentLocation.pop();
-            let searchLocationAndAddTask = function(taskObject, parentLocation, taskLocation) {
-                let result
-                if(parentLocation.length!=0) {
-                    let currentSearch = parentLocation.shift()
-                    let currentTask = taskObject[currentSearch]
-                    let currentSubtasks = currentTask.subtasks
-                    result = {...taskObject,
-                                [currentSearch]:{
-                                    ...currentTask,
-                                    subtasks: {
-                                        ...searchLocationAndAddTask(currentSubtasks, parentLocation, taskLocation)
-                                    }
-                                }
-                    }
-                } else {
-                result = {...taskObject,
-                                [taskLocation]: {
-                                    text:"", path, deleted: true,
-                                    subtasks: []
-                                }
-                    }
+            let newStore = function(currTasks) {
+                let curIter = parentLocation.shift()
+                if (curIter){
+                    return currTasks.map((v,iter)=>{
+                        if (iter==curIter) {
+                            return {...v, subtasks:newStore(v.subtasks)}
+                        }
+                        else {
+                            return v
+                        }
+                    })
                 }
-                return result
+                else {
+                    return currTasks.map((v, i)=>{
+                        if (i == taskLocation) {
+                            return {...v, text:"", deleted: true, subtasks:[]}
+                        }
+                        else {
+                            return v
+                        }
+                    })
+                }
             }
-
-            let newTasks = searchLocationAndAddTask(state.tasks, parentLocation, taskLocation);
-            
             return {...state,
-                tasks: newTasks}
+                    tasks: newStore(state.tasks)
+            }
         }
 
         default: 
