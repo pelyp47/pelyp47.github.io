@@ -9,24 +9,27 @@ const tasksTest1Object = [
     {
         text: "option 1",
         path: "0",
+        key: "0",
         deleted: false,
         subtasks: []
     },
     {
         text: "option 2",
         path: "1",
+        key: "1",
         deleted: false,
         subtasks: []
     },
     {
         text: "option 3",
         path: "2",
+        key: "2",
         deleted: false,
         subtasks: []
     }
 ]
 const tasksTest1Jsx = (
-    <ul>{[
+    <ul key="container">{[
         <Task text="option 1" path="0" key="0"/>,
         <Task text="option 2" path="1" key="1"/>,
         <Task text="option 3" path="2" key="2"/>
@@ -36,24 +39,27 @@ const tasksTest1Object_deleted0 = [
     {
         text: "option 1",
         path: "0",
+        key: "0",
         deleted: true,
         subtasks: []
     },
     {
         text: "option 2",
         path: "1",
+        key: "1",
         deleted: false,
         subtasks: []
     },
     {
         text: "option 3",
         path: "2",
+        key: "2",
         deleted: false,
         subtasks: []
     }
 ]
 const tasksTest1Jsx_deleted0 = (
-    <ul>{[
+    <ul key="container">{[
         <Task text="option 2" path="1" key="1"/>,
         <Task text="option 3" path="2" key="2"/>
     ]}</ul>
@@ -64,10 +70,12 @@ const tasksTest2Object = [
     {
         text: "option 1",
         path: "0",
+        key: "0",
         subtasks: [
             {
                 text: "option 11",
                 path: "0 0",
+                key: "0 0",
                 subtasks: []
             }
         ]
@@ -75,6 +83,7 @@ const tasksTest2Object = [
     {
         text: "option 2",
         path: "1",
+        key: "1",
         subtasks: [
             {
                 text: "option 21",
@@ -87,27 +96,29 @@ const tasksTest2Object = [
     {
         text: "option 3",
         path: "2",
+        key: "2",
         subtasks: [
             {
                 text: "option 31",
                 path: "2 0",
+                key: "2 0",
                 subtasks: []
             }
         ]
     }
 ]
 const tasksTest2Jsx = (
-    <ul>{[
+    <ul key="container">{[
         <Task text="option 1" path="0" key="0"/>,
-        <ul>{[
+        <ul key="0 container">{[
             <Task text="option 11" path="0 0" key="0 0"/>
         ]}</ul>,
         <Task text="option 2" path="1" key="1"/>,
-        <ul>{[
+        <ul key="1 container">{[
             <Task text="option 21" path="1 0" key="1 0"/>
         ]}</ul>,
         <Task text="option 3" path="2" key="2"/>,
-        <ul>{[
+        <ul key="2 container">{[
             <Task text="option 31" path="2 0" key="2 0"/>
         ]}</ul>
     ]}</ul>
@@ -117,13 +128,16 @@ const tasksTest2Jsx = (
 const tasksTest3Object = [
     {
         text: "option 1",
+        key: "0",
         path: "0",
         subtasks: [{
                 text: "option 11",
                 path: "0 0",
+                key: "0 0",
                 subtasks: [{
                     text: "option 111",
                     path: "0 0 0",
+                    key: "0 0 0",
                     subtasks: []
                 }]
         }]
@@ -131,6 +145,7 @@ const tasksTest3Object = [
     {
         text: "option 2",
         path: "1",
+        key: "1",
         subtasks: [
             {
                 text: "option 21",
@@ -138,6 +153,7 @@ const tasksTest3Object = [
                 key: "1 0",
                 subtasks: [{
                     text: "option 211",
+                    key: "1 0 0",
                     path: "1 0 0",
                     subtasks: []
                 }]
@@ -147,13 +163,16 @@ const tasksTest3Object = [
     {
         text: "option 3",
         path: "2",
+        key: "2",
         subtasks: [
             {
                 text: "option 31",
                 path: "2 0",
+                key: "2 0",
                 subtasks: [{
                     text: "option 311",
                     path: "2 0 0",
+                    key: "2 0 0",
                     subtasks: []
                 }]
             }
@@ -162,25 +181,25 @@ const tasksTest3Object = [
 ]
 
 const tasksTest3Jsx = (
-    <ul>{[
+    <ul key="container">{[
         <Task text="option 1" path="0" key="0"/>,
-        <ul>{[
+        <ul key="0 container">{[
             <Task text="option 11" path="0 0" key="0 0"/>,
-            <ul>{[
+            <ul key="0 0 container">{[
                 <Task text="option 111" path="0 0 0" key="0 0 0"/>
             ]}</ul>,
         ]}</ul>,
         <Task text="option 2" path="1" key="1"/>,
-        <ul>{[
+        <ul key="1 container">{[
             <Task text="option 21" path="1 0" key="1 0"/>,
-            <ul>{[
+            <ul key="1 0 container">{[
                 <Task text="option 211" path="1 0 0" key="1 0 0"/>
             ]}</ul>,
         ]}</ul>,
         <Task text="option 3" path="2" key="2"/>,
-        <ul>{[
+        <ul key="2 container">{[
             <Task text="option 31" path="2 0" key="2 0"/>,
-            <ul>{[
+            <ul key="2 0 container">{[
                 <Task text="option 311" path="2 0 0" key="2 0 0"/>
             ]}</ul>,
         ]}</ul>

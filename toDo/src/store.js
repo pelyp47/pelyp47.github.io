@@ -23,7 +23,7 @@ const reducer = function(state = initialState, action) {
                     })
                 }
                 else {
-                    return [...currTasks, {text,path,deleted:false,subtasks:[]}]
+                    return [...currTasks, {text,path, key:path,deleted:false,subtasks:[]}]
                 }
             }
             return {...state,
