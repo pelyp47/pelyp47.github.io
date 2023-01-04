@@ -811,6 +811,97 @@ describe("Reducer tests", ()=>{
         })    
     })
     describe("add action",()=>{
-
+        describe("[depth=1]",()=>{
+            test("adding path=3", ()=>{
+                let testInitialState_add3 = {
+                    tasks: [
+                        {
+                            text: "option 1",
+                            path: "0",
+                            key: "0",
+                            subtasks: [{
+                                    text: "option 11",
+                                    path: "0 0",
+                                    key: "0 0",
+                                    subtasks: [{
+                                        text: "option 111",
+                                        key: "0 0 0",
+                                        path: "0 0 0",
+                                        subtasks: []
+                                    }]
+                            }]
+                        },
+                        {
+                            text: "option 2",
+                            path: "1",
+                            key: "1",
+                            subtasks: [
+                                {
+                                    text: "option 21",
+                                    path: "1 0",
+                                    key: "1 0",
+                                    subtasks: [{
+                                        text: "option 211",
+                                        path: "1 0 0",
+                                        key: "1 0 0",
+                                        subtasks: []
+                                    }]
+                                }
+                            ]
+                        },
+                        {
+                            text: "option 3",
+                            path: "2",
+                            key: "2",
+                            subtasks: [
+                                {
+                                    text: "option 31",
+                                    path: "2 0",
+                                    key: "2 0",
+                                    subtasks: [{
+                                        text: "option 311",
+                                        path: "2 0 0",
+                                        key: "2 0 0",
+                                        subtasks: []
+                                    }]
+                                }
+                            ]
+                        },
+                        {
+                            text: "option 4",
+                            path: "3",
+                            key: "3",
+                            deleted: false,
+                            subtasks: []
+                        }
+                    ]
+                }
+                expect(reducer(testInitialState,{type:"addTask", payload:{text:"option 4", path:"3"}})).toEqual(testInitialState_add3)
+            })
+            test("adding path=3, added task should be an Object", ()=>{
+                expect(reducer(testInitialState, {type:"addTask", payload:{text:"option 4", path:"3"}}).tasks[3]).toBeInstanceOf(Object)
+            })
+            test("adding path=3, added task should be defined", ()=>{
+                expect(reducer(testInitialState, {type:"addTask", payload:{text:"option 4", path:"3"}}).tasks[3]).not.toEqual(undefined)
+            })
+            test("adding path=3, added task should not be an Array", ()=>{
+                expect(reducer(testInitialState, {type:"addTask", payload:{text:"option 4", path:"3"}}).tasks[3]).not.toBeInstanceOf(Array)
+            })
+            test("adding path=3, added task should not be a null", ()=>{
+                expect(reducer(testInitialState, {type:"addTask", payload:{text:"option 4", path:"3"}}).tasks[3]).not.toEqual(null)
+            })
+            test("adding path=3, added task should have a \"option 4\" text", ()=>{
+                expect(reducer(testInitialState, {type:"addTask", payload:{text:"option 4", path:"3"}}).tasks[3].text).toEqual("option 4")
+            })
+            test("adding path=3, added task should have a \"3\" path property", ()=>{
+                expect(reducer(testInitialState, {type:"addTask", payload:{text:"option 4", path:"3"}}).tasks[3].path).toEqual("3")
+            })
+            test("adding path=3, added task should have a \"3\" key property", ()=>{
+                expect(reducer(testInitialState, {type:"addTask", payload:{text:"option 4", path:"3"}}).tasks[3].key).toEqual("3")
+            })
+            test("adding path=3, added task should have a subtasks property as \"[]\"", ()=>{
+                expect(reducer(testInitialState, {type:"addTask", payload:{text:"option 4", path:"3"}}).tasks[3].subtasks).toEqual([])
+            })
+        })
     })
 })

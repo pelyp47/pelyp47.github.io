@@ -5,6 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "test": "jest",
+    "collect-coverage": "jest --collect-coverage",
     "webpack": "webpack"
   },
   "author": "Dima Pelyp",
