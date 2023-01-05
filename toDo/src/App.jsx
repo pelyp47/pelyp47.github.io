@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import CreateTask from "./CreateTask.jsx"
 import Task from "./Task.jsx"
 import { useSelector } from "react-redux"
+import styles from "./css/tasksStyles.module.css"
 
 const taskStructureTransform = function(tasks, key="") {
     let structure=[];
@@ -17,7 +18,7 @@ const taskStructureTransform = function(tasks, key="") {
         }
     }
     //ul key!!!
-    return <ul key={(key+" container").trim()}>{structure}</ul>
+    return <ul key={(key+" container").trim()} className={styles.list}>{structure}</ul>
 }
 
 const App = function(props) {
