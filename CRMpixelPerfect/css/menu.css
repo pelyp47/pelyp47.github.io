@@ -1,0 +1,6 @@
+.menu {
+    display: flex;
+    flex-direction: column;
+    padding-top: 40px;
+    flex-grow: 1;
+}

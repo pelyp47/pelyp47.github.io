@@ -1,0 +1,11 @@
+:root {
+    --main-font: 'Poppins', sans-serif;
+}
+
+* {
+    font-family: var(--main-font);
+}
+
+body {
+    overflow-x: hidden;
+}
